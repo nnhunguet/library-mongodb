@@ -9,13 +9,13 @@ module.exports = async function(req, res, next) {
       });
   }
 
-  var carts = (await Session.findOne({_id: req.signedCookies.sessionId})).cart;
-  var count = 0;
-  for(var item of carts) {
-    count += item.quantity; 
-  }
+  // var carts = (await Session.findOne({_id: req.signedCookies.sessionId})).cart;
+  // var count = 0;
+  // for(var item of carts) {
+  //   count += item.quantity; 
+  // }
   
-  res.locals.count = count ;
+  // res.locals.count = count ;
   
   next();
 }

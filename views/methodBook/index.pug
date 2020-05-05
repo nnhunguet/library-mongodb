@@ -1,0 +1,7 @@
+extends ../layout/common.pug
+block content
+  h1 Sách đã mượn
+  a(href='/user/borrow/'+user.id)
+    button Borrow Book
+  a(href='/user/give'+user.id)
+    button Give

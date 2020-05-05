@@ -1,0 +1,30 @@
+extend ../layout/common.pug
+block content
+  h1.display-4.text-center Update 
+  p.text-center.font-weight-light NguyenNghiaHung
+  
+  .d-flex.flex-column.justify-content-center.align-items-center
+    img(src=user.avatar width='80px').mb-2.rounded-circle
+    a(href='/user/profile/avatar/'+user.id)
+      button.btn.btn-outline-primary Change Avatar
+  form
+    .form-group.form-group-default
+      label Họ và tên
+      input.form-control(name='name', type='text', readonly='', value=user.name)
+    .form-group.form-group-default
+      label Email
+      input.form-control(name='email', type='text', readonly='', value=user.email)
+    .form-group.form-group-default
+      label Số điện thoại
+      input.form-control(name='phone', type='text', readonly='', value='0866979200')
+    .form-group.form-group-default
+      label Ngày sinh
+      input.form-control(name='dob', type='text', readonly='', value='2000-03-09')
+    .form-group.form-group-default
+      label Thành Phố
+      input.form-control(name='city', type='text', value='Hà Nội')
+    .form-group.form-group-default
+      label Github URL
+      input.form-control(name='githubUrl', type='text', value='')
+    button.btn.btn-primary.btn-cons(type='submit') Save
+  

@@ -1,0 +1,10 @@
+extend ../layout/common.pug
+block content
+  h1.display-4.text-center Avatar
+  p.font-weight-light.text-center Change
+  
+  form.form-group(method="POST" encType="multipart/form-data" action=('/user/profile/avatar/'+user._id))
+    label(for='changeAvatar') Change Avatar
+    input(type='file' class='form-control-file' id='changeAvatar' name='avatar')
+    hr
+    button.btn.btn-outline-dark(type='submit') Update

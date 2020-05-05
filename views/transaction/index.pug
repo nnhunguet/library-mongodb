@@ -1,0 +1,37 @@
+extend ../layout/common.pug
+block content
+  h1.display-4.text-center  All Transaction
+  if isAdmin
+    table.table.table-hover
+      tr 
+        th User
+        th Book
+        td 
+      each showTransaction in showTransactions
+          tr
+            td=showTransaction.user
+            td=showTransaction.book
+            td 
+              if !showTransaction.isComplete
+                a(href='/transactions/'+ showTransaction.id +'/complete') Finish
+              else 
+                p Finished
+  else 
+    table.table.table-hover
+      tr 
+        th User
+        th Book
+        td 
+      each showTransaction in showTransactions
+        if !showTransaction.isAdmin 
+          tr
+            td=showTransaction.user
+            td=showTransaction.book
+            td 
+              if !showTransaction.isComplete
+                a(href='/transactions/'+ showTransaction.id +'/complete') Finish
+              else 
+                p Finished
+  hr
+  a(href='/transactions/create').text-decoration-none
+    .btn.btn-outline-danger.btn-block Create

@@ -1,0 +1,26 @@
+extends ../layout/common.pug
+block content
+  h1.display-4.text-center Library
+  p.text-center.font-weight-light Coders-Tokyo
+  form(method="GET" action="/book/search").form-inline
+    .form-group.mr-2
+      input.form-control(type="text" name="q" id='title' placeholder='Search Book' value=value ? value : '')
+    button(type="submit").btn.btn-outline-primary Search
+  form(method="GET" action="/book/create").form-inline
+    .form-group
+    button(type="submit").btn.btn-outline-success Create Book
+  .row.row-cols-1.row-cols-md-3
+    each book in books
+      .col-4.mb-4
+        .card
+          img.card-img-top(src=book.image, alt='photo')
+          .card-body
+            h5.card-title=book.title
+            p.card-text=book.desc
+            a(href='/cart/add/'+book.id).text-description-none.mr-3
+              .btn.btn-primary Add to cart
+            a(href='/book/view/'+book.id).text-description-none.mr-3
+              .btn.btn-primary View
+            a(href='/book/delete/'+book.id).text-description-none
+              .btn.btn-primary Delete
+  

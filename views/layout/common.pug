@@ -1,0 +1,32 @@
+html
+    head
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.glitch.com/23458753-56b9-4f3e-adbd-c237e84ab50a%2Ffavicon-32x32.png?v=1587833367892">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.com/23458753-56b9-4f3e-adbd-c237e84ab50a%2Ffavicon-32x32.png?v=1587833367892">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.com/23458753-56b9-4f3e-adbd-c237e84ab50a%2Ffavicon-32x32.png?v=1587833367892">
+        //- <link rel="manifest" href="/site.webmanifest">
+    body
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='https://coders-x.com/' target='_blank') CoderTokyo
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item.active
+              a.nav-link(href='/')
+                | Home 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/book') Book
+            li.nav-item
+              a.nav-link(href='/user') User
+            li.nav-item
+              a.nav-link(href='/blog') Blogger
+            li.nav-item
+              a.nav-link(href='/cart') Cart
+            li.nav-item
+              if count
+                span=count
+            
+      .container.pt-5
+        block content

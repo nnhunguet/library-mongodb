@@ -1,0 +1,17 @@
+extend ./common.pug
+block content
+  table.table.table-dark
+        tr
+          td 
+            b Title
+          td 
+            b Tools
+        each book in books
+          tr
+            td
+              span=book.title
+            td
+              a(href='/book/view/'+book.id) 
+                button.btn.btn-light(type='button') View
+              a(href='/borrowed/'+idUser)
+                button.btn.btn-light(type='button') Borrow

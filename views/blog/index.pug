@@ -1,0 +1,24 @@
+extends ../layout/common.pug
+block content
+  h1.display-4.text-center Blogger 
+  p.text-center.font-weight-light Nghia Hung UET
+  each blog in blogs
+    ul.list-unstyled
+      li.media
+        img.mr-3(src=blog.image, alt='...')
+        .media-body 
+          h5.mt-0.mb-1=blog.title
+          p=blog.desc
+  nav(aria-label='...')
+    ul.pagination
+      li.page-item
+        a.page-link(href='/blog?page='+ (page-1)) Previous
+      li.page-item
+        a.page-link(href='/blog?page=' + (page-1))=page-1
+      li.page-item.active(aria-current='page')
+        span.page-link=page
+          span.sr-only (current)
+      li.page-item
+        a.page-link(href='/blog?page=' + (page+1))=page+1
+      li.page-item
+        a.page-link(href='/blog?page='+(page+1)) Next

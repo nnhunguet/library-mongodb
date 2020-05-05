@@ -1,0 +1,18 @@
+extend ../layout/common.pug
+block content
+  h1.display-4.text-center Create Transaction
+  p.text-center.font-weight-light Coders-Tokyo
+  form(action='/transactions/create' method="POST")
+    table.table
+      tr
+        td
+          select(name='user').custom-select
+            option(selected='' ) Select User
+            each user in users
+              option(value=user.id)=user.email
+        td
+          select(name='book').custom-select
+            option(selected='' ) Select Book
+            each book in books 
+              option(value=book.id)=book.title
+    button(type='submit').btn.btn-outline-danger.btn-block Submit

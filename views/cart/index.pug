@@ -1,0 +1,17 @@
+extend ../layout/common.pug
+block content
+  h1.display-4.text-center Cart
+  p.font-weight-light.text-center (Giỏ hàng)
+  
+  if carts
+    form.form(action='' method='POST')
+      table.table
+        tr
+          th Title
+          th count
+        each cart in carts
+          tr
+            td=cart.book.title  
+            td=cart.count
+      .d-flex.justify-content-end
+        button.btn.btn-success Borrow Book

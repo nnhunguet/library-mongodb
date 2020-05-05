@@ -1,0 +1,15 @@
+extends ../layout/common.pug
+block content
+  h1.display-4.text-center Create Book
+  p.text-center.font-weight-light Coders-Tokyo
+  form(action="/book/create" method="POST" encType="multipart/form-data" )
+    .form-group
+      label(for='title') Title
+      input#email.form-control(type='text' name='title')
+    .form-group
+      label(for='desc') Description
+      textarea#desc.form-control(name="desc", cols="30", rows="10")
+    .form-group
+      label(for='image') Upload Cover Book
+      input#image.form-control-file(type='file' name='coverUrl')
+    button.btn.btn-primary(type='submit') Create

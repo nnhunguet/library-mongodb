@@ -1,0 +1,9 @@
+extends ../layout/common.pug
+block content
+  h1 Update
+  form.form.form-inline(method="POST" action="/books/updateTitle/"+book.id)
+    .form-group
+    label(for="update").mr-3 
+      span(id="updateTitle")=book.title
+    input.form-control.mr-3(type="text" name="title" id="update") 
+    button(type="submit").btn.btn-outline-primary Change

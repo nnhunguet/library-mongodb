@@ -40,6 +40,7 @@ var cartRoute = require('./routes/cart.route');
 var apiTransaction = require('./api/routers/transaction.router');
 var apiLogin = require('./api/routers/user.router');
 var apiBook = require('./api/routers/book.route');
+var apiSession = require('./api/routers/session.route');
 
 var sessionMiddleware = require('./middlewares/session.middleware');
 
@@ -64,6 +65,7 @@ app.use('/cart', cartRoute);
 app.use('/api', apiTransaction);
 app.use('/api', apiLogin);
 app.use('/api', apiBook);
+app.use('/api', apiSession);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

@@ -1,0 +1,10 @@
+extend ./layout/common
+block content
+  .empty.no-content
+    .empty-icon
+        img(src='https://www.12youtube.com/themes/mi-red/img/noresults.png', alt='No results', noselect='true')
+    p.empty-title.h3 Nothing found!
+    p.empty-subtitle
+        | The page you have requested was not found on this server. It may have been deleted, or never existed. No black magic here!
+    .empty-action
+        a.btn.btn-blue-outline(href='localhost:3000') homepage

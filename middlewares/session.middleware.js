@@ -2,8 +2,8 @@ var Session = require('../models/session.model');
 
 module.exports = async function(req, res, next) {
   try {
-    var a;
-    a.b();
+    // var a;
+    // a.b();
     if(!req.signedCookies.sessionId) {
       // console.log(req.signedCookies);
       var sessionId = await Session.create({});

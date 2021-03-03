@@ -21,7 +21,7 @@
     "express-fileupload": "^1.1.7-alpha.3",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3",
